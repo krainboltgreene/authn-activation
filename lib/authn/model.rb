@@ -1,3 +1,5 @@
+require_relative 'activation/model'
+
 module AuthN
   module Model
     module ClassMethods
