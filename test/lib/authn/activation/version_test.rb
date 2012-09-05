@@ -3,6 +3,6 @@ require_relative '../../helper'
 
 class TestAuthNActivationVersion < MiniTest::Unit::TestCase
   def test_that_version_is_latest
-    assert_equal "1.6.0", AuthN::Activation::VERSION
+    assert_equal "1.7.0", AuthN::Activation::VERSION
   end
 end
