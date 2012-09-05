@@ -27,9 +27,9 @@ module AuthN
         send config.activation_expires_at_method
       end
 
-      def activate_instance
-        send_activation_state true
         send_activation_mail if defined?(:send_activation_mail)
+      def activate_instance(value = true)
+        send_activation_state value
       end
 
       def token_matches(token)
