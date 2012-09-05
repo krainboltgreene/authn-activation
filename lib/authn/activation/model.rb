@@ -13,6 +13,10 @@ module AuthN
         send_activation_state
       end
 
+      def deactivate!
+        activate_instance false
+      end
+
       private
 
       def send_activation_token
