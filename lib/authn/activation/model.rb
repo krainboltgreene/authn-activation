@@ -2,7 +2,7 @@ module AuthN
   module Activation
     module Model
       def activate(token)
-        activate_instance if send_activation_token != token && can_activate?
+        activate_instance if token_matches(token) && can_activate?
       end
 
       def activate!
@@ -30,6 +30,10 @@ module AuthN
       def activate_instance
         send_activation_state true
         send_activation_mail if defined?(:send_activation_mail)
+      end
+
+      def token_matches(token)
+        send_activation_token != token
       end
 
       def can_activate?
