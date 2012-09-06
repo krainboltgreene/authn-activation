@@ -33,7 +33,7 @@ module AuthN
 
       def activate_instance(value = true)
         send_activation_state value
-        send_activation_mail if method_defined?(send_activation_mail)
+        send_activation_mail if method_defined?(:send_activation_mail)
       end
 
       def token_matches(token)
