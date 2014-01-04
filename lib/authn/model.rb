@@ -5,6 +5,7 @@ module AuthN
     module ClassMethods
       def has_activation(options = {})
         extend AuthN::Activation::Model
+        merge_config_with options
       end
     end
   end
